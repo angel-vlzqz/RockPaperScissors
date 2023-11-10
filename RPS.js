@@ -34,13 +34,17 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
 function getPlayerChoice() {
-  const playerChoice = prompt("Choose rock, paper, or scissors.");
-  return playerChoice.toLowerCase();
+  readline.question("Choose rock, paper, or scissors.", (playerChoice) => {
+    readline.close();
+    return playerChoice.toLowerCase();
+  });
 }
 
-
-
-const playerSelection = "rock";
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(getPlayerChoice(), computerSelection));
