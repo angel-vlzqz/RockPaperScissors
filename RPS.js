@@ -34,17 +34,8 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
 function getPlayerChoice() {
-  readline.question("Choose rock, paper, or scissors.", (playerChoice) => {
-    readline.close();
-    return playerChoice.toLowerCase();
-  });
+  return prompt("Rock, paper, or scissors?").toLowerCase();
 }
 
-const computerSelection = getComputerChoice();
-console.log(playRound(getPlayerChoice(), computerSelection));
+prompt(playRound(getPlayerChoice(), getComputerChoice()));
