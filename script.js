@@ -1,3 +1,4 @@
+
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
   switch (randomNumber) {
@@ -41,11 +42,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = getPlayerChoice();
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-  }
-}
+ }
 
 game();
